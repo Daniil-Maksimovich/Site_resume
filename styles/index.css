@@ -91,6 +91,51 @@ button:hover {
   font-size: 18px;
 }
 
+.loader-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #131313;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  -webkit-animation: loader 1s linear infinite;
+          animation: loader 1s linear infinite;
+}
+
+@-webkit-keyframes loader {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .header {
   width: 100%;
   height: 80px;
@@ -216,6 +261,7 @@ button:hover {
   position: fixed;
   right: 25px;
   bottom: 13px;
+  z-index: 100;
 }
 
 .scroll-button .active {
@@ -748,6 +794,10 @@ button:hover {
 }
 
 @media screen and (max-width: 800px) {
+  .loader-container .loader {
+    height: 75px;
+    width: 75px;
+  }
   .heading::after {
     display: none;
   }
@@ -867,6 +917,10 @@ button:hover {
 }
 
 @media screen and (max-width: 600px) {
+  .loader-container .loader {
+    height: 60px;
+    width: 60px;
+  }
   .burger-menu__nav a {
     padding: 17px;
     letter-spacing: 3px;

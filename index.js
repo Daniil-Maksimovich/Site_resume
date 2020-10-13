@@ -1,4 +1,12 @@
 window.onload = () => {
+
+    //hiding preloader
+
+    document.querySelector('.loader-container').style.opacity = '0';
+    setTimeout(() => {
+        document.querySelector('.loader-container').style.display = 'none';
+    }, 300);
+
     //AOS initialization
     
     AOS.init();

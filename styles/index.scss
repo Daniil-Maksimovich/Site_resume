@@ -69,6 +69,42 @@ button:hover{
     }
 }
 
+//document loader
+
+.loader-container{
+    width: 100%;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #131313;
+    transition: .3s;
+}
+
+.loader{
+    width: 100px;
+    height: 100px;
+
+    border: 5px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    
+    animation: loader 1s linear infinite;
+}
+
+@keyframes loader{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
 // header styles
 
 .header{
@@ -198,6 +234,7 @@ button:hover{
     position: fixed;
     right: 25px;
     bottom: 13px;
+    z-index: 100;
     .active{
         display: block;
         opacity: 1;
@@ -711,6 +748,10 @@ button:hover{
 }
 
 @media screen and ( max-width: 800px ){
+    .loader-container .loader{
+        height: 75px;
+        width: 75px;
+    }
     .heading{
         &::after{
             display: none;
@@ -841,6 +882,10 @@ button:hover{
 }
 
 @media screen and ( max-width: 600px ){
+    .loader-container .loader{
+        height: 60px;
+        width: 60px;
+    }
     .burger-menu__nav{
         a{
             padding: 17px;

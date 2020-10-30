@@ -638,14 +638,6 @@ button:hover {
   width: 50%;
 }
 
-.soft__image {
-  width: 50%;
-}
-
-.soft__image img {
-  height: 500px;
-}
-
 .footer__content {
   padding: 40px 0;
   text-align: center;
@@ -767,9 +759,6 @@ button:hover {
   .hard__skills__content__item img {
     height: 70px;
   }
-  .soft__image img {
-    height: 400px;
-  }
 }
 
 @media screen and (max-width: 950px) {
@@ -862,9 +851,6 @@ button:hover {
   }
   .soft__skills {
     width: 100%;
-  }
-  .soft__image {
-    display: none;
   }
 }
 

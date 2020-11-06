@@ -1,5 +1,4 @@
 window.onload = () => {
-
     //hiding preloader
 
     document.querySelector('.loader-container').style.opacity = '0';
@@ -10,16 +9,6 @@ window.onload = () => {
     //AOS initialization
     
     AOS.init();
-
-    // prevention links`s default behavior
-
-    const preventLinks = document.querySelectorAll('.prevent');
-
-    preventLinks.forEach( (elem) => {
-        elem.addEventListener('click', (e) => {
-            e.preventDefault();
-        })
-    });
 
     //burger menu collaption
 
@@ -41,29 +30,23 @@ window.onload = () => {
     // scrolling to sections
 
     const navLinks = document.querySelectorAll('.burger-menu__nav a');
-    const sections = document.querySelectorAll('section');
-    const sectionsArray = Array.from(sections);
+    const sections = Array.from(document.querySelectorAll('section'));
 
-    navLinks.forEach(elem => {
-        elem.addEventListener('click', () => {
-            console.dir(elem)
-
-            const machedSection = sectionsArray.filter(item => {
+    navLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault()
+            const machedSection = sections.filter(item => {
                 const patt = item.className;
-                if (elem.href.match(patt)) {
+                if (e.target.href.match(patt)) {
                     return item
                 }
             });
 
             const sectionCoord = machedSection[0].getBoundingClientRect();
-
             const body = document.body;
             const docEl = document.documentElement;
-
             const scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
-
             const clientTop = docEl.clientTop || body.clientTop || 0;
-
             const top = sectionCoord.top + scrollTop - clientTop;
 
             window.scrollTo({
@@ -71,7 +54,6 @@ window.onload = () => {
                 behavior: 'smooth'
             })
             hideMenu();
-
         });
     });
 
@@ -91,5 +73,4 @@ window.onload = () => {
             behavior: 'smooth'
         })
     });
-
 }

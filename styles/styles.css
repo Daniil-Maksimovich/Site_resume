@@ -163,6 +163,11 @@ button:hover {
   background-color: #bebebe;
 }
 
+.burger-menu__button:hover {
+  transition: all .2s linear;
+  filter: brightness(0.8);
+}
+
 .burger-menu__lines,
 .burger-menu__lines::before,
 .burger-menu__lines::after {
@@ -363,7 +368,10 @@ button:hover {
   width: 50%;
   padding: 60px 0;
 }
-
+.about ul{
+  padding: 10px;
+  margin-left: 30px;
+}
 .about__img h2,
 .about__content h2 {
   padding-bottom: 5px;
@@ -776,7 +784,8 @@ button:hover {
   .about__content h2 {
     font-size: 30px;
   }
-  .about__content p {
+  .about__content p,
+  .about__content ul li {
     font-size: 15px;
   }
   .about__img img {
@@ -999,7 +1008,8 @@ button:hover {
   .about__content h2 {
     font-size: 30px;
   }
-  .about__content p {
+  .about__content p,
+  .about__content ul li  {
     font-size: 12px;
   }
   .about__content > .about__img img {
